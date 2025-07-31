@@ -59,13 +59,13 @@ class PandaRunner:
     with self.lock:
       cans = list(chain.from_iterable(p.can_recv() for p in self.pandas))
 
+    msg = messaging.new_message('can', len(cans) if cans else 0)
+    msg.valid = True
     if cans:
-      msg = messaging.new_message('can', len(cans))
-      msg.valid = True
       for i, can_info in enumerate(cans):
         can = msg.can[i]
         can.address, can.dat, can.src = can_info
-      self.pm.send("can", msg)
+    self.pm.send("can", msg)
 
   def run(self, evt):
     send_thread = threading.Thread(target=self._can_send, args=(evt,))
