@@ -10,9 +10,9 @@ import cereal.messaging as messaging
 from openpilot.common.params import Params
 from openpilot.common.realtime import Ratekeeper
 from openpilot.common.swaglog import cloudlog
-from openpilot.selfdrive.pandad.panda.state_manager import PandaStateManager
-from openpilot.selfdrive.pandad.panda.peripheral import PeripheralManager
-from openpilot.selfdrive.pandad.panda.safety import PandaSafetyManager
+from openpilot.selfdrive.pandad.state_manager import PandaStateManager
+from openpilot.selfdrive.pandad.peripheral import PeripheralManager
+from openpilot.selfdrive.pandad.safety import PandaSafetyManager
 
 FAKE_SEND = os.getenv("FAKESEND") == "1"
 

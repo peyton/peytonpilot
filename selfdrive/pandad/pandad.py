@@ -9,7 +9,7 @@ from openpilot.common.params import Params
 from openpilot.common.realtime import config_realtime_process
 from openpilot.system.hardware import HARDWARE
 from openpilot.common.swaglog import cloudlog
-from openpilot.selfdrive.pandad.panda.runner import PandaRunner
+from openpilot.selfdrive.pandad.runner import PandaRunner
 
 
 def get_expected_signature(panda: Panda) -> bytes:

@@ -1,5 +1,4 @@
 from panda import Panda
-import capnp
 from cereal import car
 from openpilot.common.params import Params
 from openpilot.common.swaglog import cloudlog

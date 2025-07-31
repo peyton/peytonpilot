@@ -58,7 +58,7 @@ class PandaStateManager:
         faults[idx] = fault
 
     with self.lock:
-      for panda, ps in zip(self.pandas, panda_states):
+      for panda, ps in zip(self.pandas, panda_states, strict=False):
         if ps.safetyModel == car.CarParams.SafetyModel.silent or (
             not ignition and ps.safetyModel != car.CarParams.SafetyModel.noOutput):
           panda.set_safety_mode(car.CarParams.SafetyModel.noOutput)
